@@ -9,34 +9,41 @@ import styled from "styled-components";
 function App() {
   const [user, setUser] = useState(new User());
   const [list, setList] = useState([]);
-  const url = "https://jsonplaceholder.typicode.com/users";
+  const url = "http://localhost:5277/api/Users";
 
-  useEffect((async) => {
-    loadList(url, setList);
+  useEffect(() => {
+    const fetchData = async () => {
+      await loadList(url, setList);
+    };
+    fetchData();
   }, []);
 
   function selectUser(id) {
-    setUser(list.find((u) => u.id == id));
+    setUser(list.find((u) => u.id === id));
   }
+
   function saveUser(data) {
     SaveUser(url, data, setList);
   }
+
   function deleteUser(user) {
     DeleteUser(url, user.id, setList);
   }
+
   function search(name, group) {
     let filter;
-    if (name == "") loadList(url, setList);
+    if (name === "") loadList(url, setList);
     else {
-      if (group == "id") filter = list.filter((u) => u.id == parseInt(name));
-      else if (group == "name") filter = list.filter((u) => u.name == name);
-      else if (group == "username")
-        filter = list.filter((u) => u.username == name);
-      else if (group == "email") filter = list.filter((u) => u.email == name);
-      else if (group == "phone") filter = list.filter((u) => u.phone == name);
+      if (group === "id") filter = list.filter((u) => u.id == parseInt(name));
+      else if (group === "name") filter = list.filter((u) => u.name === name);
+      else if (group === "username")
+        filter = list.filter((u) => u.username === name);
+      else if (group === "email") filter = list.filter((u) => u.email === name);
+      else if (group === "phone") filter = list.filter((u) => u.phone === name);
       setList(filter);
     }
   }
+
   return (
     <AppStyled>
       <div className="container-fluid pl-5 pr-8">
