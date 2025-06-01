@@ -33,10 +33,9 @@ dotnet run
 
 ### 2. Lancer le frontend
 
-cd Api_CrudApp
-dotnet restore
-dotnet build
-dotnet run
+cd APP_CRUD
+npm install
+npm run dev
 
 📄 API Documentation
 
