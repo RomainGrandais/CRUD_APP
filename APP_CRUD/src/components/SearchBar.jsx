@@ -46,8 +46,6 @@ const SearchBarStyled = styled.div`
   align-items: center;
   gap: ${theme.spacing.sm};
   padding: ${theme.spacing.sm};
-  border: 1px solid;
-  border-color: red;
   width: 50%;
 
   .searchBar-container {

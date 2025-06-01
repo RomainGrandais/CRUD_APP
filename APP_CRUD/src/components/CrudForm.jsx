@@ -85,8 +85,6 @@ const CrudFormStyled = styled.div`
   box-shadow: ${theme.shadows.medium};
   backdrop-filter: blur(10px);
   color: ${theme.colors.white};
-  border: 1px solid;
-  border-color: red;
 
   label {
     display: block;

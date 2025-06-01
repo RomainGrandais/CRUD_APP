@@ -36,8 +36,6 @@ export default function List(props) {
 }
 
 const ListStyled = styled.div`
-  border: 1px solid;
-  border-color: red;
   #list {
     max-height: 600px;
     width: 100%;

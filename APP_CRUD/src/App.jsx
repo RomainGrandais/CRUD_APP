@@ -72,7 +72,6 @@ const AppStyled = styled.div`
 
   .col-md-8 {
     width: 70%;
-    border: solid 1px;
   }
   .col-md-4 {
     width: 30%;
